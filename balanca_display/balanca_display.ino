@@ -88,12 +88,12 @@ void setup() {
 
  Serial.begin(9600);
  Serial.print("Leitura do Valor ADC: ");
- Serial.println(escala.read()); // Aguada até o dispositivo estar pronto
+ Serial.println(escala.read()); 
  Serial.println("Nao coloque nada na balanca!");
  Serial.println("Iniciando...");
  
- escala.set_scale(435406.037); // Substituir o valor encontrado para escala
- escala.tare(20); // O peso é chamado de Tare.
+ escala.set_scale(435406.037); 
+ escala.tare(20); 
  
  lcd.clear();
  lcd.setCursor(4, 0);
