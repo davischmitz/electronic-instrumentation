@@ -9,7 +9,9 @@
 
 #define BUZZER_FREQUENCY 4978
 
-#define SCALE 435650.4848
+// #define SCALE 435650.4848
+#define SCALE 450926.3333
+
 
 //sinalização
 #define BUZZER_PIN 10
