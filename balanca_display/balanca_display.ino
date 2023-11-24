@@ -87,8 +87,10 @@ void navigateMenu(const int state) {
 }
 
 void restart(const int state) {
-  lcd.clear();
-  currentScreen = 0;
+  if (escButton.state() == LOW) {
+    lcd.clear();
+    currentScreen = 0;
+  }
 } 
 
 void setup() {
@@ -112,8 +114,6 @@ void setup() {
   escala.tare(20);
 
   lcd.clear();
-  lcd.setCursor(4, 0);
-  lcd.print("BALANCA");
 
   pinMode(BUZZER_PIN, OUTPUT);
   pinMode(UPPER_LED_PIN, OUTPUT);
@@ -128,6 +128,10 @@ void loop() {
   escButton.update();
 
   switch (currentScreen) {
+    case 0:
+      lcd.setCursor(4, 0);
+      lcd.print("BALANCA");
+      break;
     case 1:
       lcd.setCursor(0, 0);
       lcd.print("Alarme superior");
