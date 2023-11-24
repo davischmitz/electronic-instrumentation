@@ -86,10 +86,9 @@ void navigateMenu(const int state) {
   }
 }
 
-void restart() {
+void restart(const int state) {
   lcd.clear();
-  lcd.print("Balanca");
-  delay(500);
+  currentScreen = 0;
 } 
 
 void setup() {
@@ -126,6 +125,7 @@ void loop() {
   incAlarmButton.update();
   decAlarmButton.update();
   confirmAlarmButton.update();
+  escButton.update();
 
   switch (currentScreen) {
     case 1:
